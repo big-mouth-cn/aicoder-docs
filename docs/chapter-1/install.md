@@ -4,12 +4,28 @@
 
 ## Codex Desktop：现在叫 ChatGPT Desktop
 
-1. 打开[官方桌面端下载与安装指南](https://learn.chatgpt.com/docs/quickstart)。
-2. 选择你的操作系统，下载并安装 **ChatGPT Desktop**。平台和硬件支持以下载页面为准。
+1. 根据下表选择操作系统和处理器架构，直接下载安装包。也可以查看[官方桌面端下载与安装指南](https://learn.chatgpt.com/docs/quickstart)。
+2. 安装 **ChatGPT Desktop**。
 3. 打开应用，按界面提示完成初始设置。
 4. 在新对话的产品选择器中选择 **Codex**，再打开你的项目文件夹。
 
-旧教程中的“Codex Desktop”指的是桌面使用方式；当前请从 ChatGPT Desktop 官方入口下载，进入应用后选择 Codex。
+### 桌面端直接下载
+
+如果无法打开官方下载页面，可以直接使用以下下载链接：
+
+| 操作系统 | 处理器架构 | 下载链接 |
+| --- | --- | --- |
+| macOS | Apple Silicon（M 系列芯片） | [下载 Codex.dmg](https://persistent.oaistatic.com/codex-app-prod/Codex.dmg) |
+| macOS | Intel | [下载 Codex-latest-x64.dmg](https://persistent.oaistatic.com/codex-app-prod/Codex-latest-x64.dmg) |
+| Windows | 由 Microsoft 安装器处理 | [下载 Windows 安装器](https://get.microsoft.com/installer/download/9PLM9XGG6VKS?cid=website_cta_psi) |
+| Linux（DEB 包） | x86_64 / AMD64 | [下载 chatgpt_amd64.deb](https://persistent.oaistatic.com/codex-app-prod/linux/deb/latest/chatgpt_amd64.deb) |
+| Linux（DEB 包） | ARM64 | [下载 chatgpt_arm64.deb](https://persistent.oaistatic.com/codex-app-prod/linux/deb/latest/chatgpt_arm64.deb) |
+| Linux（RPM 包） | x86_64 / AMD64 | [下载 chatgpt.x86_64.rpm](https://persistent.oaistatic.com/codex-app-prod/linux/rpm/latest/chatgpt.x86_64.rpm) |
+| Linux（RPM 包） | ARM64 / aarch64 | [下载 chatgpt.aarch64.rpm](https://persistent.oaistatic.com/codex-app-prod/linux/rpm/latest/chatgpt.aarch64.rpm) |
+
+Mac 用户可在苹果菜单的“关于本机”中确认芯片类型。Linux 用户可运行 `uname -m` 查看架构；Debian / Ubuntu 系列通常选择 DEB 包，Fedora / RHEL 系列通常选择 RPM 包。
+
+旧教程或安装包文件名中可能仍会出现“Codex”。安装后打开 ChatGPT Desktop，在产品选择器中选择 Codex 即可。
 
 如果准备使用 AICoder，请继续下一章获取 API Key，再配置 Provider。ChatGPT 账号登录与 AICoder API Key 是两套不同的凭据。
 
