@@ -1,12 +1,14 @@
 # 第一章：如何使用 Codex？
 
-Codex 是一个可以在终端中检查代码、修改文件、运行命令和自动化重复任务的 AI 编程助手。本章以 **Codex CLI** 为主线，介绍安装、登录、启动，以及连接自定义 Provider 的完整流程。
+Codex 是一个可以检查代码、修改文件、运行命令和自动化重复任务的 AI 编程助手。现在的桌面应用统一称为 **ChatGPT Desktop**，打开后在产品选择器中进入 **Codex**；终端用户则使用 **Codex CLI**。本章介绍两种使用方式，以及连接自定义 Provider 的完整流程。
 
 ## 本章你会学到什么
 
 - 在 macOS、Linux 或 Windows 上安装 Codex CLI
+- 安装并使用 ChatGPT Desktop 中的 Codex
 - 在项目目录中启动 Codex 并完成登录
 - 使用 `~/.codex/config.toml` 配置自定义 Provider
+- 使用 CC-Switch 图形化管理和切换 Provider
 - 用环境变量管理 API Key，避免把密钥提交到 Git
 - 验证 Provider 是否能正常工作
 

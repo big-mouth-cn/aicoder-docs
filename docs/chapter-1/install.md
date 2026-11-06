@@ -47,6 +47,21 @@ codex
 请先阅读这个项目的结构，告诉我主要模块以及本地启动方式。
 ```
 
+## 使用 ChatGPT Desktop
+
+现在桌面端的应用名称是 **ChatGPT Desktop**，不再单独叫 Codex Desktop。安装 ChatGPT Desktop 后，打开新对话顶部的产品选择器，选择 **Codex**，然后选择要使用的本地项目或文件夹。
+
+桌面端适合希望使用图形界面、项目文件和长任务的场景；终端用户继续使用上面的 `codex` 命令即可。两种入口使用的是同一类 Codex 能力，但登录状态和具体功能可能受账号、平台版本及工作区设置影响。
+
+官方入口：
+
+- [ChatGPT Desktop 快速开始](https://learn.chatgpt.com/docs/quickstart)
+- [ChatGPT Desktop 应用说明](https://learn.chatgpt.com/docs/app)
+
+::: tip 产品名称变化
+你可能仍会在旧教程、安装包或截图中看到“Codex Desktop”。查找最新版下载和设置时，以 ChatGPT Desktop 官方页面为准；安装后在产品选择器中选择 Codex。
+:::
+
 ## 常用命令
 
 | 命令 | 用途 |

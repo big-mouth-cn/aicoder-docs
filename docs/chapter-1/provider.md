@@ -12,6 +12,21 @@
 
 如果设置了 `CODEX_HOME`，配置目录会改为 `$CODEX_HOME`。Provider 建议配置在用户级文件中；项目级 `.codex/config.toml` 对 Provider、认证和请求地址等敏感配置有限制，不适合用来保存个人密钥。
 
+## 使用 CC-Switch 图形化配置
+
+如果不想手动编辑 TOML，可以使用 [CC-Switch](https://github.com/farion1231/cc-switch)。它是一个开源桌面管理工具，支持 Windows、macOS 和 Linux，并可以集中管理 Claude Code、Codex、Gemini CLI 等工具的 Provider。
+
+基本流程：
+
+1. 从 [CC-Switch Releases](https://github.com/farion1231/cc-switch/releases) 下载对应系统版本并安装。
+2. 打开 CC-Switch，在侧栏选择 **Codex**，点击右上角的“+”添加供应商。
+3. 选择已有预设，或创建自定义配置，填写 Provider 名称、Base URL、API Key 和模型等信息。
+4. 点击“启用”切换供应商，然后重启 Codex CLI 或 ChatGPT Desktop 中的 Codex，让配置生效。
+
+CC-Switch 会替你写入 Codex 的配置文件，适合需要在多个网关之间频繁切换的场景。API Key 仍然属于敏感信息：只从可信来源安装 CC-Switch，不要把包含密钥的配置文件提交到 GitHub，也不要在截图或日志中公开密钥。
+
+如果需要精确控制 `wire_api`、自定义请求头或认证命令，仍建议直接编辑 `~/.codex/config.toml`，因为图形化工具的字段和行为可能随版本变化。
+
 ## 最小配置
 
 下面的例子把 Provider 命名为 `proxy`，通过环境变量 `OPENAI_API_KEY` 读取密钥：
