@@ -1,6 +1,6 @@
 # 3. 将 Provider 设置为 AICoder
 
-准备好 AICoder 的 **API Base URL、API Key、模型 ID** 后，选择下面一种配置方式即可。官网是 [https://aicoder.work](https://aicoder.work)，接口参数请使用控制台提供的值。
+准备好 AICoder 的 **API Base URL、API Key、模型 ID** 后，选择下面一种配置方式即可。官网是 [https://aicoder.work](https://aicoder.work)，API Base URL 为 `https://api.aicoder.work/v1`；API Key 和模型 ID 请从控制台获取。
 
 ## 方式一：通过 CC-Switch 配置
 
@@ -9,7 +9,7 @@
 1. 从 [CC-Switch Releases](https://github.com/farion1231/cc-switch/releases) 下载适合操作系统的安装包并安装。
 2. 打开 CC-Switch，选择 **Codex**。即使桌面应用现在叫 ChatGPT，管理编程工具配置时仍选择 Codex。
 3. 点击添加供应商，选择自定义配置，将名称填写为 **AICoder**。
-4. 填写 AICoder 控制台提供的 API Base URL、API Key 和模型 ID。若有协议选项，按 AICoder 的 Codex 接入说明选择 Responses API。
+4. 将 API Base URL 填为 `https://api.aicoder.work/v1`，再填写控制台提供的 API Key 和模型 ID。若有协议选项，按 AICoder 的 Codex 接入说明选择 Responses API。
 5. 保存并点击“启用”，然后退出并重新打开 Codex CLI；使用桌面端时，完全退出并重开 ChatGPT Desktop，再进入 Codex 新对话验证。
 
 CC-Switch 不同版本的按钮名称可能略有差异。它负责管理连接配置，实际请求使用的是你的 AICoder 账号及额度。
@@ -29,7 +29,7 @@ CC-Switch 不同版本的按钮名称可能略有差异。它负责管理连接�
 
 ### 添加 AICoder Provider
 
-将下面两个占位值替换为控制台提供的信息：
+将下面的模型 ID 和 API Key 占位值替换为控制台提供的信息：
 
 ```toml
 model = "替换为AICoder提供的模型ID"
@@ -37,30 +37,22 @@ model_provider = "aicoder"
 
 [model_providers.aicoder]
 name = "AICoder"
-base_url = "替换为AICoder提供的API根地址"
+base_url = "https://api.aicoder.work/v1"
 wire_api = "responses"
-env_key = "AICODER_API_KEY"
+experimental_bearer_token = "替换为你的AICoder密钥"
 ```
 
 `model` 和 `model_provider` 是顶层字段，要放在 TOML 表头之前；已有同名字段时修改原值，不要重复添加。`wire_api = "responses"` 要求服务端支持 Responses API，具体以 AICoder 的 Codex 接入说明为准。
 
-### 设置 API Key
+### 保存并重新打开 Codex
 
-macOS / Linux，在准备启动 Codex 的终端中执行：
+`experimental_bearer_token` 填写的是 API Key 本身，不是环境变量名，也不需要添加 `Bearer ` 前缀。此配置方式不需要设置 `AICODER_API_KEY` 环境变量。
 
-```bash
-export AICODER_API_KEY="替换为你的AICoder密钥"
-codex
-```
+保存配置后，CLI 用户重新运行 `codex`；桌面用户完全退出并重开 ChatGPT Desktop，再进入 Codex 新建对话。
 
-Windows PowerShell：
-
-```powershell
-$env:AICODER_API_KEY = "替换为你的AICoder密钥"
-codex
-```
-
-上面的环境变量只对当前终端及其启动的进程生效。**从桌面图标启动的 ChatGPT Desktop 不一定能读取终端中设置的变量。** 桌面端建议优先使用 CC-Switch；手动配置时，需要确保应用进程也能读取 `AICODER_API_KEY`，配置后完全退出并重启应用。
+::: warning 配置文件包含密钥
+该方式会将 API Key 保存在本机的 `config.toml` 中。不要把此文件提交到 GitHub、公开分享或放入截图；备份时也应妥善保管。
+:::
 
 ## 验证接入
 
@@ -79,7 +71,7 @@ CLI 用户进入一个项目目录后运行 `codex`；桌面用户打开 ChatGPT
 | 401 / 403 | API Key 是否正确、是否启用，分组和模型权限是否可用 |
 | 404 | Base URL 路径是否正确，有没有重复添加 `/v1` 或 `/responses` |
 | 模型不存在 | `model` 是否与 AICoder 提供的模型 ID 完全一致 |
-| 提示缺少环境变量 | 启动 Codex 的进程是否能读取 `AICODER_API_KEY` |
+| 认证配置未生效 | `experimental_bearer_token` 是否填写了实际 API Key，是否仍残留旧的认证配置 |
 | 配置后仍走原服务 | 是否启用了 AICoder、是否重启客户端并新建对话，有没有其他配置覆盖 |
 | 额度不足或请求受限 | AICoder 账号余额、套餐、分组额度及限流设置 |
 

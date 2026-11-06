@@ -18,11 +18,11 @@
 
 | 信息 | 从哪里获取 | 用在哪里 |
 | --- | --- | --- |
-| API Base URL | AICoder 控制台的接入说明 | Codex 的 `base_url` 或 CC-Switch 的接口地址 |
+| API Base URL | `https://api.aicoder.work/v1` | Codex 的 `base_url` 或 CC-Switch 的接口地址 |
 | API Key | 控制台创建的 API 密钥 | API 请求认证 |
 | 模型 ID | 控制台接入说明或可用模型列表 | Codex 的 `model` |
 
-**官网地址不一定就是 API Base URL。** 请复制控制台展示的完整 API 根地址，包括它要求的路径；不要自行猜测是否需要 `/v1`，也不要把 `/responses` 完整请求地址当作根地址填写。
+AICoder 官网为 `https://aicoder.work`，API Base URL 为 **`https://api.aicoder.work/v1`**。配置时保留 `/v1`，不要重复添加 `/v1`，也不要在根地址后追加 `/responses`。
 
 如果控制台要求先开通套餐、充值或选择可用分组，完成后再测试调用。可用模型和额度以你的账号为准。
 
