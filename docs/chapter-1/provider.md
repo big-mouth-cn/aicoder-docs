@@ -38,7 +38,7 @@ CC-Switch 不同版本的按钮名称可能略有差异。它负责管理连接�
 将下面的模型 ID 和 API Key 占位值替换为控制台提供的信息：
 
 ```toml
-model = "替换为AICoder提供的模型ID"
+model = "gpt-6.1-sol"
 model_provider = "aicoder"
 
 [model_providers.aicoder]
@@ -48,7 +48,7 @@ wire_api = "responses"
 experimental_bearer_token = "替换为你的AICoder密钥"
 ```
 
-`model` 和 `model_provider` 是顶层字段，要放在 TOML 表头之前；已有同名字段时修改原值，不要重复添加。`wire_api = "responses"` 要求服务端支持 Responses API，具体以 AICoder 的 Codex 接入说明为准。
+`model` 和 `model_provider` 是顶层字段，要放在 TOML 表头之前；已有同名字段时修改原值，不要重复添加。`wire_api = "responses"` 要求服务端支持 Responses API，AICoder 当前完全支持。
 
 ### 保存并重新打开 Codex
 
