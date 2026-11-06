@@ -2,7 +2,7 @@
 
 本指南帮助你完成一条最短的使用路径：**安装 Codex Desktop / CLI → 注册 AICoder 并创建 API Key → 将 Provider 设置为 AICoder**。
 
-AICoder 基于 sub2api 提供服务，官网是 [https://aicoder.work](https://aicoder.work)。本指南中的 API Key、模型和接口地址均使用 AICoder 控制台提供的信息。
+AICoder 官网是 [https://aicoder.work](https://aicoder.work)。本指南中的 API Key、模型和接口地址均使用 AICoder 控制台提供的信息。
 
 ## 按顺序开始
 
