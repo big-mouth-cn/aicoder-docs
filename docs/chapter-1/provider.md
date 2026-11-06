@@ -12,6 +12,12 @@
 4. 将 API Base URL 填为 `https://api.aicoder.work/v1`，再填写控制台提供的 API Key 和模型 ID。若有协议选项，按 AICoder 的 Codex 接入说明选择 Responses API。
 5. 保存并点击“启用”，然后退出并重新打开 Codex CLI；使用桌面端时，完全退出并重开 ChatGPT Desktop，再进入 Codex 新对话验证。
 
+### 配置截图
+
+![CC-Switch 中配置 AICoder：选择 Codex，填写 API Key 和 API 请求地址](/images/cc-switch-aicoder.png)
+
+如图，在 Codex 的供应商配置中，将名称设置为 `AICoder`，API 请求地址填写 `https://api.aicoder.work/v1`，API Key 填写你在 AICoder 控制台创建的密钥。截图中的密钥已隐藏；默认模型仅为示例，请选择账号实际可用的模型。
+
 CC-Switch 不同版本的按钮名称可能略有差异。它负责管理连接配置，实际请求使用的是你的 AICoder 账号及额度。
 
 建议先使用基础的直连配置完成接入；不要同时用 CC-Switch 和手动编辑来反复覆盖同一份配置。排查问题前先备份现有配置。
