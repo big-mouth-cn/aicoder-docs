@@ -10,6 +10,13 @@
 
 [立即接入 AICoder →](/chapter-1/install) · [前往官网参与活动 →](https://aicoder.work)
 
+## 90 秒视频：快速了解如何使用
+
+<video controls playsinline preload="none" style="width: 100%; border-radius: 12px;" aria-label="AICoder 使用演示">
+  <source src="/videos/aicoder-quickstart.mp4" type="video/mp4" />
+  你的浏览器不支持在线播放，请<a href="/videos/aicoder-quickstart.mp4">下载使用演示视频</a>观看。
+</video>
+
 ## 快速开始
 
 1. [下载安装 Codex Desktop / CLI](/chapter-1/install)
